@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"    
+  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+  <h2>用户列表</h2>
+  <span shiro:authenticated="true" >
+  <span>欢迎您：<span th:text="${userInfo.realName}"></span></span>
+</span>
+</body>
+</html>

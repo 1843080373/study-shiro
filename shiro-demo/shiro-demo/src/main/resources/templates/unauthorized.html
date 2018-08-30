@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"    
+  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+<button shiro:hasPermission="sys:user:add" type="button" class="btn  btn-primary" onclick="add()">
+   <i class="fa fa-plus" aria-hidden="true"></i>添加
+</button>
+</body>
+</html>

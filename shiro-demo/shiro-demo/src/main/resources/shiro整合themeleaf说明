@@ -1,0 +1,27 @@
+https://www.cnblogs.com/kibana/p/8953566.html
+https://www.cnblogs.com/ll409546297/p/7815409.html
+https://github.com/527515025/springBoot
+1、用户没有身份验证时显示相应信息，即游客访问信息：
+<shiro:guest>内容</shiro:guest>
+2、用户已经身份验证/记住我登录后显示相应的信息：
+<shiro:user>内容</shiro:user>
+3、用户已经身份验证通过，即Subject.login登录成功，不是记住我登录的：
+<shiro:authenticated>内容</shiro:authenticated>
+4、显示用户身份信息，通常为登录帐号信息，默认调用Subject.getPrincipal()获取，即Primary Principal：
+<shiro:principal/>
+5、用户已经身份验证通过，即没有调用Subject.login进行登录，包括记住我自动登录的也属于未进行身份验证，与guest标签的区别是，该标签包含已记住用户。：
+<shiro:notAuthenticated>内容</shiro:notAuthenticated> 
+6、<shiro:principal type="java.lang.String"/>
+相当于Subject.getPrincipals().oneByType(String.class)。 
+7、<shiro:principal property="username"/> 
+相当于((User)Subject.getPrincipals()).getUsername()。  
+8、如果当前Subject有角色将显示body体内容：
+<shiro:hasRole name="角色名">内容</shiro:hasRole>
+9、<shiro:hasAnyRoles name="角色名1,角色名2…">内容</shiro:hasAnyRoles>
+如果当前Subject有任意一个角色（或的关系）将显示body体内容。
+10、<shiro:lacksRole name="角色名">内容</shiro:lacksRole>
+如果当前Subject没有角色将显示body体内容。
+11、<shiro:hasPermission name="权限名">内容</shiro:hasPermission>
+如果当前Subject有权限将显示body体内容。 
+12、<shiro:lacksPermission name="权限名">内容</shiro:lacksPermission>
+如果当前Subject没有权限将显示body体内容。
